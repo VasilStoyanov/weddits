@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weddits</title>
+
+    <!-- HTML5 mode -->
+    <base href="/">
+
+    <!-- Libs -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <script src="libs/angular-aria/angular-aria.min.js"></script>
+    <script src="libs/angular-material/angular-material.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="libs/angular-material/angular-material.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="styles/navigation.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="styles/projects-styles.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!-- Application -->
+    <script src="./scripts/app.js"></script>
+
+    <!-- Services -->
+    <script src="./scripts/services/lb-services.js"></script>
+
+    <!-- Controllers -->
+    <script src="./scripts/controllers/base-controller.js"></script>
+    <script src="./scripts/controllers/login-controller.js"></script>
+    <script src="./scripts/controllers/register-controller.js"></script>
+    <script src="./scripts/controllers/pricing-controller.js"></script>
+    <script src="./scripts/controllers/newProject-controller.js"></script>
+    <script src="./scripts/controllers/userProjects-controller.js"></script>
+  </head>
+  <body data-ng-app="Weddist" layout="column" data-ng-controller="BaseController as bm" style="background-color: #E9EBEE;">
+
+    <div style="height:600px">
+
+    <md-toolbar layout-align="center center" md-scroll-shrink="" ng-if="true">
+      <div class="toolbar" layout-xs="center center">
+        <div class="title" style="font-size: 25px">Weddits</div>
+
+        <md-button ng-hide="bm.userLoggedIn" class="md-flat" href="/login" hide-xs>
+          Login
+        </md-button>
+
+        <md-button ng-hide="bm.userLoggedIn" class="md-flat" href="/register" hide-xs>
+          Register
+        </md-button>
+
+        <md-button ng-show="bm.userLoggedIn" class="md-flat" ng-click="bm.logOutCurrentUser()" hide-xs>
+          Logout
+        </md-button>
+
+        <md-button ng-show="bm.userLoggedIn" class="md-flat" href="/balance" hide-xs>
+          Balance
+        </md-button>
+
+        <md-button ng-show="bm.userLoggedIn" class="md-flat" ng-click="bm.showTabDialog($event)" hide-xs>
+          Add new project
+        </md-button>
+
+        <md-button ng-show="bm.userLoggedIn" class="md-flat" href="/projects" hide-xs>
+          My Projects
+        </md-button>
+
+        <md-icon show-xs hide-gt-xs md-svg-src="images/icons/navigation/navResponsive48.svg"></md-icon>
+
+        <div style="display: inline-block; padding: 13px; float: right;" ng-show="bm.userLoggedIn" class="md-subhead">
+          {{bm.user.email}}
+        </div>
+      </div>
+
+    </md-toolbar>
+    <md-content data-ng-view style="background-color: #E9EBEE"></md-content>
+  </div>
+
+</body>
+</html>

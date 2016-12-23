@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "WedditsDb": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "WedditsDb",
+    "name": "WedditsDb",
+    "connector": "mongodb"
+  }
+}

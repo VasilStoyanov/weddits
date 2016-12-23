@@ -1,0 +1,25 @@
+<div data-ng-controller="LoginController as lm">
+  <div class="md-display-1" style="text-align: center; margin: 10px; color: rgb(79, 79, 79);">Login</div>
+  <div layout="column" ng-cloak style="width: 100%;" layout-align-gt-sm="center center">
+    <div style="min-width: 58%; margin: 10px" md-whiteframe="6">
+      <md-content layout-padding flex="100">
+        <form name="loginForm">
+          <md-input-container class="md-block">
+            <label>Email</label>
+            <md-icon md-svg-src="images/icons/email.svg"></md-icon>
+            <input type="email" name="email" ng-model="user.email"/>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Password</label>
+            <md-icon md-svg-src="images/icons/password.svg"></md-icon>
+            <input type="password" step="any" name="password" ng-model="user.password"/>
+          </md-input-container>
+          <div>
+            <a href="/register" style="text-decoration: underline; color: gray;">Or register a new account</a>
+            <md-button ng-click="lm.loginUser(user)" type="submit" class="md-raised md-primary">Login</md-button>
+          </div>
+        </form>
+      </md-content>
+    </div>
+  </div>
+</div>

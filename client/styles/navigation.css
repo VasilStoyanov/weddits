@@ -1,0 +1,16 @@
+div.toolbar {
+  width: 100%;
+}
+div.toolbar> div.title {
+  display: inline-block;
+  margin: 6px;
+  font-weight: bolder;
+}
+.md-button {
+  display: inline-block;
+  float: right;
+}
+div.toolbar> md-icon {
+  float: right;
+  margin: 15px;
+}

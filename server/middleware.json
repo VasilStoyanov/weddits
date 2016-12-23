@@ -1,0 +1,135 @@
+{
+  "initial:before": {
+    "loopback#favicon": {
+      "params": "client/images/favicon.ico"
+    }
+  },
+  "initial": {
+    "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    },
+    "helmet#xssFilter": {},
+    "helmet#frameguard": {
+      "params": [
+        "deny"
+      ]
+    },
+    "helmet#hsts": {
+      "params": {
+        "maxAge": 0,
+        "includeSubdomains": true
+      }
+    },
+    "helmet#hidePoweredBy": {},
+    "helmet#ieNoOpen": {},
+    "helmet#noSniff": {},
+    "helmet#noCache": {
+      "enabled": false
+    }
+  },
+  "session": {},
+  "auth": {},
+  "parse": {},
+  "routes": {
+    "loopback#rest": {
+      "paths": [
+        "${restApiRoot}"
+      ]
+    }
+  },
+  "files": {
+    "loopback#static": [
+      {
+        "paths": [
+          "/"
+        ],
+        "params": [
+          "$!../client"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular"
+        ],
+        "params": [
+          "$!../node_modules/angular"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular-material"
+        ],
+        "params": [
+          "$!../node_modules/angular-material"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular-resource"
+        ],
+        "params": [
+          "$!../node_modules/angular-resource"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular-aria"
+        ],
+        "params": [
+          "$!../node_modules/angular-aria"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular-animate"
+        ],
+        "params": [
+          "$!../node_modules/angular-animate"
+        ]
+      },
+      {
+        "paths": [
+          "/libs/angular-route"
+        ],
+        "params": [
+          "$!../node_modules/angular-route"
+        ]
+      },
+      {
+        "paths": [
+          "/styles"
+        ],
+        "params": [
+          "$!../client/styles"
+        ]
+      },
+      {
+        "paths": [
+          "/styles/home"
+        ],
+        "params": [
+          "$!../client/styles/home_page"
+        ]
+      },
+      {
+        "paths": [
+          "/images"
+        ],
+        "params": [
+          "$!../client/images"
+        ]
+      }
+    ]
+  },
+  "final": {
+    "./middleware/url-not-found-handler": {}
+  },
+  "final:after": {
+    "loopback#errorHandler": {}
+  }
+}

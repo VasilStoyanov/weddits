@@ -1,0 +1,36 @@
+<div class="md-display-1" style="text-align: center; margin: 10px; color: rgb(79, 79, 79);">Register new account</div>
+<div layout="column" ng-cloak style="width: 100%;" layout-align-gt-sm="center center">
+  <div style="min-width: 58%; margin: 10px" md-whiteframe="6">
+    <md-content layout-padding flex="100">
+      <form name="registrationForm">
+        <md-input-container class="md-block">
+          <label>Email</label>
+          <md-icon md-svg-src="images/icons/email.svg"></md-icon>
+          <input type="email" name="email" ng-model="user.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
+          <div ng-messages="registrationForm.email.$error" role="alert">
+            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+              Your email must be between 10 and 100 characters long and look like an e-mail address.
+            </div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Password</label>
+          <md-icon md-svg-src="images/icons/password.svg"></md-icon>
+          <input type="password" step="any" name="password" ng-model="user.password"/>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Confirm password</label>
+          <md-icon md-svg-src="images/icons/confirmPassword.svg"></md-icon>
+          <input type="password" step="any" name="confirmPassword" ng-model="user.confirmPassword"/>
+        </md-input-container>
+        <div>Or register using:</div><br/>
+        <image src="images/icons/facebook.svg" class="grow" style="width: 5.5%; heigth: 5.5%; margin-right: 10px;"></image>
+        <image src="images/icons/google-plus.svg" class="grow" style="width: 5.5%; heigth: 5.5%"></image>
+        <div>
+          <md-button ng-click="vm.createUser(user)" type="submit" class="md-raised md-primary">Register</md-button>
+          <md-button ng-click="vm.createUser(user)" type="submit" class="md-raised md-warn">Cancel</md-button>
+        </div>
+      </form>
+    </md-content>
+  </div>
+</div>

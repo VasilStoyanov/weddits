@@ -1,0 +1,46 @@
+<md-dialog data-ng-controller="NewProjectController as vm" aria-label="Add project" style="min-width: 50%">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add a new project</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px; max-height:810px;">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Dropbox" data-ng-click="vm.hddOptions(false)">
+          <md-content class="md-padding">
+            <h1 class="md-display-1" style="margin-bottom: 20px; margin-top: -5px; font-size: 30px">Send us your project using dropbox</h1>
+            <p>You can send us a direct link to your dropbox workspace and we will download the project from there.</p>
+            <md-input-container style="width: 100%">
+              <label>Name of project</label>
+              <input type="text" ng-model="project.name">
+            </md-input-container>
+            <md-input-container style="width: 100%">
+              <label>Dropbox link</label>
+              <input type="text" ng-model="project.dropboxLink">
+            </md-input-container>
+          </md-content>
+        </md-tab>
+        <md-tab label="Hard disk drive" ng-click="vm.hddOptions(true)">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Hard disk drive</h1>
+            <p>You can send us an hard disk drive (HDD) containing the project, or you can order one from us.</p>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('useful')" class="md-raised md-warn">
+        Cancel
+      </md-button>
+      <md-button ng-click="answer('text')" class="md-raised md-primary" data-ng-show="vm.showHddOptions">
+        Order HDD
+      </md-button>
+      <md-button ng-click="answer('text')" class="md-raised md-primary">
+        Submit
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

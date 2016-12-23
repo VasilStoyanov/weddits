@@ -1,0 +1,34 @@
+div#projects-table > div#projects-table {
+  width: auto;
+  height: auto;
+}
+
+div#projects-table > div#project-status div.status-row {
+  width: 100%;
+  display: inline-block;
+}
+
+div#projects-table > div#project-status div.status-row > div.row-title {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  color: gray;
+  font-size: 25px;
+  border-right: 1px solid silver;
+}
+
+div#projects-table > div#project-status div.status-row > div > md-list.list-style {
+  border-right: 1px solid silver;
+  padding: 0;
+}
+
+div#projects-table > div#project-status div.status-row > div > md-list.list-style > md-list-item.list-item-style {
+  padding: 0;
+  height: 53px;
+  color: gray;
+}
+
+div#projects-table > div#project-status div.status-row > div > md-list.list-style > md-list-item.list-item-style > md-list-item {
+  width: 100%;
+  height: 100%;
+}

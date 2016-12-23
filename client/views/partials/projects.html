@@ -1,0 +1,73 @@
+<div id="projects-table" data-ng-controller="UserProjectsController as pm" style="margin-bottom: 20px">
+  <div id="project-status" layout="row" layout-align="center center" layout-xs="column">
+
+    <!-- Received column -->
+    <div class="status-row">
+      <div class="md-title row-title">Received</div>
+      <div>
+        <md-divider ></md-divider>
+        <md-list class="list-style">
+          <md-list-item data-ng-repeat="project in pm.projects" data-ng-style="{'background-color': pm.getColor($index)}" class="list-item-style">
+            <md-list-item data-ng-click="pm.showDetails(project)" md-ink-ripple="#3F51B5" data-ng-if="project.status === 'Received'">
+              {{project.name}}
+            </md-list-item>
+            <md-divider ></md-divider>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
+    <!-- Processing column -->
+    <div class="status-row">
+      <div class="md-title row-title">Processing</div>
+      <div>
+        <md-divider ></md-divider>
+        <md-list class="list-style">
+          <md-list-item data-ng-repeat="project in pm.projects" data-ng-style="{'background-color': pm.getColor($index)}" class="list-item-style">
+            <md-list-item data-ng-click="pm.showDetails(project)" md-ink-ripple="#3F51B5" data-ng-if="project.status === 'Processing'">
+              {{project.name}}
+            </md-list-item>
+            <md-divider ></md-divider>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
+    <!-- Finalizing column -->
+    <div class="status-row">
+      <div class="md-title row-title">Finalizing</div>
+      <div>
+        <md-divider ></md-divider>
+        <md-list class="list-style">
+          <md-list-item data-ng-repeat="project in pm.projects" data-ng-style="{'background-color': pm.getColor($index)}" class="list-item-style">
+            <md-list-item data-ng-click="pm.showDetails(project)" md-ink-ripple="#3F51B5" data-ng-if="project.status === 'Finalizing'">
+              {{project.name}}
+            </md-list-item>
+            <md-divider ></md-divider>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
+    <!-- Completed column -->
+    <div class="status-row">
+      <div class="md-title row-title">Completed</div>
+      <div>
+        <md-divider ></md-divider>
+        <md-list class="list-style">
+          <md-list-item data-ng-repeat="project in pm.projects" data-ng-style="{'background-color': pm.getColor($index)}" class="list-item-style">
+            <md-list-item data-ng-click="pm.showDetails(project)" md-ink-ripple="#3F51B5" data-ng-if="project.status === 'Completed'">
+              {{project.name}}
+            </md-list-item>
+            <md-button data-ng-if="project.status === 'Completed'" style="float: right; display: inline-block;" class="md-raised md-accent" href="/balance">Balance</md-button>
+            <md-list-item data-ng-if="!(project.status === 'Completed')">
+              <div style="color: #b8b8b8; font-style: italic">ETA: {{project.finishDate}}</div>
+            </md-list-item>
+            <md-divider ></md-divider>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
+  </div>
+</div>

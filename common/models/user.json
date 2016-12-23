@@ -1,0 +1,26 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "test": {
+      "type": "string"
+    },
+    "roles": {
+      "type": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "projects": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
